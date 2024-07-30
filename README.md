@@ -6,8 +6,7 @@ Welcome to the STM32F446RE Bare-Metal Programming repository. This repository co
 
 1. [Overview](#overview)
 2. [Getting Started](#getting-started)
-3. [Folder Structure](#folder-structure)
-4. [How to Run the Code](#how-to-run-the-code)
+3. [How to Run the Code](#how-to-run-the-code)
 
 ## Overview
 
