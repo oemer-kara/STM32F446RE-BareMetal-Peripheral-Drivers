@@ -1,0 +1,73 @@
+
+#ifndef SPI_H_
+#define SPI_H_
+
+#include "bit_operations.h"
+#include "stm32f446xx.h"
+#include <stdio.h>
+
+/**
+ * @brief  Initializes GPIO pins for SPI1.
+ * 
+ * This function configures GPIO pins PA5, PA6, PA7 for SPI1 
+ * alternate function and PA9 as an output pin. It also enables 
+ * the clock access to GPIOA.
+ * 
+ * - PA5 -> CLK: Clock signal for SPI1.
+ * - PA6 -> MISO: Master In Slave Out for SPI1.
+ * - PA7 -> MOSI: Master Out Slave In for SPI1.
+ * - PA9 -> Slave Select: Slave Select signal for SPI1.
+ */
+void spi1_gpio_init(void);
+
+/**
+ * @brief  Configures the SPI1 peripheral.
+ * 
+ * This function sets up the SPI1 peripheral including clock 
+ * polarity, phase, data format, master mode, and enables the SPI.
+ */
+void spi1_config(void);
+
+/**
+ * @brief  Transmits data over SPI1.
+ * 
+ * This function sends an array of bytes over SPI1. It waits for 
+ * the transmit buffer to be empty (TXE) before writing data to 
+ * the data register. After sending all data, it waits for the 
+ * transmission to complete (BUSY flag cleared) and clears any 
+ * potential overrun flag (OVR).
+ * 
+ * @param data Pointer to the array of data bytes to be transmitted.
+ * @param size Number of bytes to transmit.
+ */
+void spi1_transmit(uint8_t* data, uint32_t size);
+
+/**
+ * @brief  Receives data over SPI1.
+ * 
+ * This function reads an array of bytes from SPI1. It waits for 
+ * the receive buffer to be filled (RXNE flag) before reading data 
+ * from the data register.
+ * 
+ * @param data Pointer to the buffer where received data will be stored.
+ * @param size Number of bytes to receive.
+ */
+void spi1_recieve(uint8_t* data, uint32_t size);
+
+/**
+ * @brief  Enable the chip select (CS) line.
+ * 
+ * This function sets the GPIO pin for chip select to low, activating 
+ * the connected peripheral device.
+ */
+void cs_enable(void);
+
+/**
+ * @brief  Disable the chip select (CS) line.
+ * 
+ * This function sets the GPIO pin for chip select to high, deactivating 
+ * the connected peripheral device.
+ */
+void cs_disable(void);
+
+#endif

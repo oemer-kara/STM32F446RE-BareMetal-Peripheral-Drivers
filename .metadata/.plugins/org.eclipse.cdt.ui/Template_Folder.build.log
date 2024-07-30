@@ -1,0 +1,10 @@
+14:02:17 **** Incremental Build of configuration Debug for project Template_Folder ****
+make -j16 all 
+arm-none-eabi-size  Template_Folder.elf 
+   text	   data	    bss	    dec	    hex	filename
+    712	      0	   1568	   2280	    8e8	Template_Folder.elf
+Finished building: default.size.stdout
+ 
+
+14:02:18 Build Finished. 0 errors, 0 warnings. (took 134ms)
+

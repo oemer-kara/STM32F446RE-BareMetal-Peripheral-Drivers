@@ -1,0 +1,4 @@
+../Src/uart.c:3:6:uart2_txrx_init	4	static
+../Src/uart.c:51:6:uart2_write	16	static
+../Src/uart.c:63:9:uart2_read	4	static
+../Src/uart.c:75:5:__io_putchar	16	static

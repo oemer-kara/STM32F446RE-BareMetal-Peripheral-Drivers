@@ -1,0 +1,370 @@
+13:54:20 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+14:29:49 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+14:31:00 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+In file included from ../Inc/uart.h:4,
+                 from ../Src/main.c:2:
+../Inc/bit_operations.h:4: warning: "SET_BIT" redefined
+    4 | #define SET_BIT(register, bit)    ((register) |= (1 << (bit)))
+      | 
+In file included from ../Src/main.c:1:
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:211: note: this is the location of the previous definition
+  211 | #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+      | 
+../Inc/bit_operations.h:5: warning: "CLEAR_BIT" redefined
+    5 | #define CLEAR_BIT(register, bit)  ((register) &= ~(1 << (bit)))
+      | 
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213: note: this is the location of the previous definition
+  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:9:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+    9 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:3:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    2 | #include "uart.h"
+  +++ |+#include <stdio.h>
+    3 | #include <stdint.h>
+../Src/main.c:9:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+    9 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:9:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:12:36: warning: statement with no effect [-Wunused-value]
+   12 |         for(int i = 0; i < 100000; i) {}
+      |                                    ^
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+14:31:11 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/uart.h:4,
+                 from ../Src/main.c:2:
+../Inc/bit_operations.h:4: warning: "SET_BIT" redefined
+    4 | #define SET_BIT(register, bit)    ((register) |= (1 << (bit)))
+      | 
+In file included from ../Src/main.c:1:
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:211: note: this is the location of the previous definition
+  211 | #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+      | 
+../Inc/bit_operations.h:5: warning: "CLEAR_BIT" redefined
+    5 | #define CLEAR_BIT(register, bit)  ((register) &= ~(1 << (bit)))
+      | 
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213: note: this is the location of the previous definition
+  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:11:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   11 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:3:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    2 | #include "uart.h"
+  +++ |+#include <stdio.h>
+    3 | #include <stdint.h>
+../Src/main.c:11:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   11 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:11:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:14:35: warning: statement with no effect [-Wunused-value]
+   14 |         for(int i = 0; i < 10000; i) {}
+      |                                   ^
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+14:31:12 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+14:31:13 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+14:31:17 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/uart.h:4,
+                 from ../Src/main.c:2:
+../Inc/bit_operations.h:4: warning: "SET_BIT" redefined
+    4 | #define SET_BIT(register, bit)    ((register) |= (1 << (bit)))
+      | 
+In file included from ../Src/main.c:1:
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:211: note: this is the location of the previous definition
+  211 | #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+      | 
+../Inc/bit_operations.h:5: warning: "CLEAR_BIT" redefined
+    5 | #define CLEAR_BIT(register, bit)  ((register) &= ~(1 << (bit)))
+      | 
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213: note: this is the location of the previous definition
+  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:11:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   11 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:3:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    2 | #include "uart.h"
+  +++ |+#include <stdio.h>
+    3 | #include <stdint.h>
+../Src/main.c:11:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   11 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:11:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:14:36: warning: statement with no effect [-Wunused-value]
+   14 |         for(int i = 0; i < 100000; i) {}
+      |                                    ^
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+14:31:19 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+14:31:20 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+14:31:24 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+14:32:04 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+15:10:05 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/uart.h:4,
+                 from ../Src/main.c:2:
+../Inc/bit_operations.h:4: warning: "SET_BIT" redefined
+    4 | #define SET_BIT(register, bit)    ((register) |= (1 << (bit)))
+      | 
+In file included from ../Src/main.c:1:
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:211: note: this is the location of the previous definition
+  211 | #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+      | 
+../Inc/bit_operations.h:5: warning: "CLEAR_BIT" redefined
+    5 | #define CLEAR_BIT(register, bit)  ((register) &= ~(1 << (bit)))
+      | 
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213: note: this is the location of the previous definition
+  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:11:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   11 |         printf("Hello, World!/r/n");
+      |         ^~~~~~
+../Src/main.c:3:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    2 | #include "uart.h"
+  +++ |+#include <stdio.h>
+    3 | #include <stdint.h>
+../Src/main.c:11:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   11 |         printf("Hello, World!/r/n");
+      |         ^~~~~~
+../Src/main.c:11:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:14:36: warning: statement with no effect [-Wunused-value]
+   14 |         for(int i = 0; i < 100000; i) {}
+      |                                    ^
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+15:10:12 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+15:10:18 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+15:10:56 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/uart.h:4,
+                 from ../Src/main.c:2:
+../Inc/bit_operations.h:4: warning: "SET_BIT" redefined
+    4 | #define SET_BIT(register, bit)    ((register) |= (1 << (bit)))
+      | 
+In file included from ../Src/main.c:1:
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:211: note: this is the location of the previous definition
+  211 | #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+      | 
+../Inc/bit_operations.h:5: warning: "CLEAR_BIT" redefined
+    5 | #define CLEAR_BIT(register, bit)  ((register) &= ~(1 << (bit)))
+      | 
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213: note: this is the location of the previous definition
+  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:11:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   11 |         printf("Hello, World!/n/r");
+      |         ^~~~~~
+../Src/main.c:3:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    2 | #include "uart.h"
+  +++ |+#include <stdio.h>
+    3 | #include <stdint.h>
+../Src/main.c:11:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   11 |         printf("Hello, World!/n/r");
+      |         ^~~~~~
+../Src/main.c:11:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:14:36: warning: statement with no effect [-Wunused-value]
+   14 |         for(int i = 0; i < 100000; i) {}
+      |                                    ^
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+15:11:01 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+15:11:48 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+15:34:51 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5232	     92	   1900	   7224	   1c38	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+15:35:55 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F446RETx -DNUCLEO_F446RE -DSTM32F446xx -c -I../Inc -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Inc/uart.h:4,
+                 from ../Src/main.c:2:
+../Inc/bit_operations.h:4: warning: "SET_BIT" redefined
+    4 | #define SET_BIT(register, bit)    ((register) |= (1 << (bit)))
+      | 
+In file included from ../Src/main.c:1:
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:211: note: this is the location of the previous definition
+  211 | #define SET_BIT(REG, BIT)     ((REG) |= (BIT))
+      | 
+../Inc/bit_operations.h:5: warning: "CLEAR_BIT" redefined
+    5 | #define CLEAR_BIT(register, bit)  ((register) &= ~(1 << (bit)))
+      | 
+D:/Workspace/EmbeddedSoftware/STM32F446RE-BareMetal-Peripheral-Drivers/STM32F446RE_Headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:213: note: this is the location of the previous definition
+  213 | #define CLEAR_BIT(REG, BIT)   ((REG) &= ~(BIT))
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:11:9: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   11 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:3:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+    2 | #include "uart.h"
+  +++ |+#include <stdio.h>
+    3 | #include <stdint.h>
+../Src/main.c:11:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   11 |         printf("Hello, World!\n\r");
+      |         ^~~~~~
+../Src/main.c:11:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Src/main.c:14:36: warning: statement with no effect [-Wunused-value]
+   14 |         for(int i = 0; i < 100000; i) {}
+      |                                    ^
+arm-none-eabi-gcc -o "UART_Driver_Example.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\UART_Driver_Example\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_Driver_Example.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_Driver_Example.elf
+ 
+arm-none-eabi-size  UART_Driver_Example.elf 
+arm-none-eabi-objdump -h -S UART_Driver_Example.elf  > "UART_Driver_Example.list"
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_Driver_Example.list
+ 
+15:36:00 **** Incremental Build of configuration Debug for project UART_Driver_Example ****
+make -j16 all 
+arm-none-eabi-size  UART_Driver_Example.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5228	     92	   1900	   7220	   1c34	UART_Driver_Example.elf
+Finished building: default.size.stdout
+ 

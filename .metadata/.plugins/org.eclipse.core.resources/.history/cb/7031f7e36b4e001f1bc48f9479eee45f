@@ -1,0 +1,9 @@
+
+#ifdef SPI_H_
+#define SPI_H_
+
+#include "stm32f4xx.h"
+
+void spi_gpio_init(void);
+
+#endif

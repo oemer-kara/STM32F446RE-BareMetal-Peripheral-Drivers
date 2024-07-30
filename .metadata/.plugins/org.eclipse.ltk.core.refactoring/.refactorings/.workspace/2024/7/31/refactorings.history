@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Boilerplate_Folder_Structure&apos; to &apos;Template_Folder&apos;" description="Rename resource &apos;Boilerplate_Folder_Structure&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Boilerplate_Folder_Structure" name="Template_Folder" stamp="1722334615706" updateReferences="true"/>
+</session>

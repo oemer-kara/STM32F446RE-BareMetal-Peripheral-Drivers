@@ -1,0 +1,12 @@
+
+#ifndef SPI_H_
+#define SPI_H_
+
+#include "stm32f446.h"
+
+#define GPIOA_ENABLE (1U << 0)
+#define SPI1_ENABLE  (1U << 12)
+
+void spi_gpio_init(void);
+
+#endif

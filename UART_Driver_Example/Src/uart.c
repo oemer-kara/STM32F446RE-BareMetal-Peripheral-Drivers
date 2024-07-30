@@ -1,0 +1,79 @@
+#include "uart.h"
+
+void uart2_txrx_init(void)
+{
+    // Enable clock access to GPIOA
+    SET_BIT(RCC->AHB1ENR, 0);
+
+    // Configure PA2 mode to alternate function (AF7 for UART2 TX)
+    // PA2: AF7 (MODER[5:4] = 10)
+    CLEAR_BIT(GPIOA->MODER, 4);
+    SET_BIT(GPIOA->MODER, 5);
+
+    // Set PA2 alternate function to UART2 (AF7)
+    // AFR[0] is for pins PA0-PA7 (bits 0-31)
+    // PA2: AFRL[11:8] = 0111
+    SET_BIT(GPIOA->AFR[0], 8);
+    SET_BIT(GPIOA->AFR[0], 9);
+    SET_BIT(GPIOA->AFR[0], 10);
+    CLEAR_BIT(GPIOA->AFR[0], 11);
+
+    // Configure PA3 mode to alternate function (AF7 for UART2 RX)
+    // PA3: AF7 (MODER[7:6] = 10)
+    CLEAR_BIT(GPIOA->MODER, 6);
+    SET_BIT(GPIOA->MODER, 7);
+
+    // Set PA3 alternate function to UART2 (AF7)
+    // AFR[0] is for pins PA0-PA7 (bits 0-31)
+    // PA3: AFRL[15:12] = 0111
+    SET_BIT(GPIOA->AFR[0], 12);
+    SET_BIT(GPIOA->AFR[0], 13);
+    SET_BIT(GPIOA->AFR[0], 14);
+    CLEAR_BIT(GPIOA->AFR[0], 15);
+
+    // Enable clock access to UART2
+    SET_BIT(RCC->APB1ENR, 17);
+
+    // Configure the baud rate (APB1 bus is at 16 MHz)
+    // Baud rate calculation: USART2->BRR = (16,000,000 + (115,200 / 2)) / 115,200
+    USART2->BRR = (16000000 + (115200 / 2)) / 115200;     // Set baud rate register
+
+    // Enable the transmitter
+    SET_BIT(USART2->CR1, 3);
+
+    // Enable the receiver
+    SET_BIT(USART2->CR1, 2);
+
+    // Enable the UART module
+    SET_BIT(USART2->CR1, 13);
+}
+
+void uart2_write(uint8_t data)
+{
+    // Wait for TXE flag to be set (indicating that the transmit data register is empty)
+    while(!CHECK_BIT(USART2->SR, 7))
+    {
+        // Wait here until TXE flag is set
+    }
+
+    // Write data to UART2 data register (DR)
+    USART2->DR = data;     // Transmit the byte of data
+}
+
+uint8_t uart2_read(void)
+{
+    // Wait for RXNE flag to be set (indicating that the receive data register is not empty)
+    while(!CHECK_BIT(USART2->SR, 5))
+    {
+        // Wait here until RXNE flag is set
+    }
+
+    // Read data from UART2 data register (DR)
+    return (uint8_t) USART2->DR;     // Return the byte of data received
+}
+
+int __io_putchar(int ch)
+{
+    uart2_write((uint8_t) ch);
+    return ch;
+}

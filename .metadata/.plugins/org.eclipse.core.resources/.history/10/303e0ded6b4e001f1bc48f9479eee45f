@@ -1,0 +1,6 @@
+#include "spi.h"
+
+
+void spi_gpio_init(void)
+{
+}
