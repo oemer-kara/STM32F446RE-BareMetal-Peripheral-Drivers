@@ -313,26 +313,109 @@ org.eclipse.core.runtime.CoreException: attempt to set description for a project
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
 !SUBENTRY 1 org.eclipse.cdt.core 4 -1 2024-07-30 14:02:23.202
 !MESSAGE attempt to set description for a project which does not exist or not open
-!SESSION 2024-07-31 10:02:19.456 -----------------------------------------------
-eclipse.buildId=Version 1.15.1
-java.version=17.0.8.1
-java.vendor=Eclipse Adoptium
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-07-31 10:02:33.795
-!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+!ENTRY com.st.stm32cube.common.projectcreation 4 0 2024-07-31 15:58:58.603
+!MESSAGE Project is null
 
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-07-31 10:02:33.801
-!MESSAGE Log4j2 initialized with config file D:\Workspace\EmbeddedSoftware\STM32F446RE-BareMetal-Peripheral-Drivers\.metadata\.log4j2.xml
+!ENTRY org.eclipse.core.resources 4 2 2024-07-31 15:59:02.322
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Internal error saving launch history
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1182)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1DebugUIPluginSaveParticipant.saving(DebugUIPlugin.java:531)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: The system cannot find the path specified
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1043)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.persistLaunchHistory(LaunchConfigurationManager.java:467)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1180)
+	... 9 more
+!SUBENTRY 1 org.eclipse.debug.ui 4 0 2024-07-31 15:59:02.322
+!MESSAGE Internal error saving launch history
+!STACK 0
+java.io.IOException: The system cannot find the path specified
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1043)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.persistLaunchHistory(LaunchConfigurationManager.java:467)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1180)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1DebugUIPluginSaveParticipant.saving(DebugUIPlugin.java:531)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.debug.ui 4 0 2024-07-31 15:59:02.322
+!MESSAGE Internal error saving launch history
+!STACK 0
+java.io.IOException: The system cannot find the path specified
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1043)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.persistLaunchHistory(LaunchConfigurationManager.java:467)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1180)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1DebugUIPluginSaveParticipant.saving(DebugUIPlugin.java:531)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 
-!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-07-31 10:02:38.737
-!MESSAGE Started RMI Server, listening on port 41337
+!ENTRY org.eclipse.core.resources 2 2 2024-07-31 15:59:02.323
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 566 2024-07-31 15:59:02.323
+!MESSAGE Problems occurred during save.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Internal error saving launch history
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1182)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1DebugUIPluginSaveParticipant.saving(DebugUIPlugin.java:531)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: The system cannot find the path specified
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1043)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.persistLaunchHistory(LaunchConfigurationManager.java:467)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1180)
+	... 9 more
+!SUBENTRY 2 org.eclipse.debug.ui 4 0 2024-07-31 15:59:02.323
+!MESSAGE Internal error saving launch history
+!STACK 0
+java.io.IOException: The system cannot find the path specified
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1043)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.persistLaunchHistory(LaunchConfigurationManager.java:467)
+	at org.eclipse.debug.internal.ui.launchConfigurations.LaunchConfigurationManager.saving(LaunchConfigurationManager.java:1180)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1DebugUIPluginSaveParticipant.saving(DebugUIPlugin.java:531)
+	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
+	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 
-!ENTRY org.eclipse.cdt.core 1 0 2024-07-31 10:02:48.908
-!MESSAGE Indexed 'UART_Driver_Example' (5 sources, 61 headers) in 1.22 sec: 2,909 declarations; 3,855 references; 4 unresolved inclusions; 30 syntax errors; 707 unresolved names (9.5%)
+!ENTRY org.eclipse.cdt.core 1 0 2024-07-31 15:59:31.146
+!MESSAGE Indexed 'UART_Driver_Example' (3 sources, 61 headers) in 0.379 sec: 2,851 declarations; 3,788 references; 4 unresolved inclusions; 30 syntax errors; 707 unresolved names (9.6%)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2024-07-31 10:02:58.162
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2024-07-31 15:59:35.147
 !MESSAGE Project 'Template_Folder' is not open.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/Template_Folder)[372]: java.lang.Exception: Project 'Template_Folder' is not open.
@@ -390,7 +473,7 @@ org.eclipse.core.internal.resources.ResourceException(/Template_Folder)[372]: ja
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
-!SUBENTRY 1 org.eclipse.core.resources 4 372 2024-07-31 10:02:58.163
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2024-07-31 15:59:35.147
 !MESSAGE Project 'Template_Folder' is not open.
 !STACK 0
 java.lang.Exception: Project 'Template_Folder' is not open.
@@ -449,7 +532,7 @@ java.lang.Exception: Project 'Template_Folder' is not open.
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
 
-!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2024-07-31 10:02:58.179
+!ENTRY org.eclipse.cdt.managedbuilder.core 4 0 2024-07-31 15:59:35.153
 !MESSAGE Project 'Template_Folder' is not open.
 !STACK 1
 org.eclipse.core.internal.resources.ResourceException(/Template_Folder)[372]: java.lang.Exception: Project 'Template_Folder' is not open.
@@ -507,7 +590,7 @@ org.eclipse.core.internal.resources.ResourceException(/Template_Folder)[372]: ja
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
-!SUBENTRY 1 org.eclipse.core.resources 4 372 2024-07-31 10:02:58.179
+!SUBENTRY 1 org.eclipse.core.resources 4 372 2024-07-31 15:59:35.153
 !MESSAGE Project 'Template_Folder' is not open.
 !STACK 0
 java.lang.Exception: Project 'Template_Folder' is not open.
@@ -566,7 +649,7 @@ java.lang.Exception: Project 'Template_Folder' is not open.
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
 
-!ENTRY org.eclipse.cdt.core 4 0 2024-07-31 10:02:58.186
+!ENTRY org.eclipse.cdt.core 4 0 2024-07-31 15:59:35.157
 !MESSAGE Error
 !STACK 1
 org.eclipse.core.runtime.CoreException: attempt to set description for a project which does not exist or not open
@@ -617,5 +700,5 @@ org.eclipse.core.runtime.CoreException: attempt to set description for a project
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
-!SUBENTRY 1 org.eclipse.cdt.core 4 -1 2024-07-31 10:02:58.186
+!SUBENTRY 1 org.eclipse.cdt.core 4 -1 2024-07-31 15:59:35.157
 !MESSAGE attempt to set description for a project which does not exist or not open

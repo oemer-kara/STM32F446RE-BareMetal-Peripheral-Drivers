@@ -6,11 +6,5 @@
 int main(void)
 {
     uart2_txrx_init( );
-    while(1)
-    {
-        printf("Hello, World!\n\r");
-
-        //Arbitrary Sleep
-        for(int i = 0; i < 100000; i) {}
-    }
+    printf("Hello, World!\n\r");
 }

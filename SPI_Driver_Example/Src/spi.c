@@ -12,40 +12,40 @@ void spi1_gpio_init(void)
 
     // Set PA5, PA6, PA7 mode to alternate function (AF5 for SPI1)
     // PA5: AF5 (MODER[11:10] = 10)
-    CLEAR_BIT(GPIOA->MODER, 10);
-    SET_BIT(GPIOA->MODER, 11);
+    CLEAR_BIT(GPIOA->MODER, 10);     // Clear MODER10
+    SET_BIT(GPIOA->MODER, 11);       // Set MODER11
 
     // PA6: AF5 (MODER[13:12] = 10)
-    CLEAR_BIT(GPIOA->MODER, 12);
-    SET_BIT(GPIOA->MODER, 13);
+    CLEAR_BIT(GPIOA->MODER, 12);     // Clear MODER12
+    SET_BIT(GPIOA->MODER, 13);       // Set MODER13
 
     // PA7: AF5 (MODER[15:14] = 10)
-    CLEAR_BIT(GPIOA->MODER, 14);
-    SET_BIT(GPIOA->MODER, 15);
+    CLEAR_BIT(GPIOA->MODER, 14);     // Clear MODER14
+    SET_BIT(GPIOA->MODER, 15);       // Set MODER15
 
     // Set PA9 as output pin (MODER[19:18] = 01)
-    CLEAR_BIT(GPIOA->MODER, 18);
-    SET_BIT(GPIOA->MODER, 19);
+    CLEAR_BIT(GPIOA->MODER, 18);     // Clear MODER18
+    SET_BIT(GPIOA->MODER, 19);       // Set MODER19
 
     // Set PA5, PA6, PA7 Alternate Function to SPI1 (AF5)
     // AF[0] is for pins PA0-PA7 (bits 0-31)
     // PA5: AFRL[23:20] = 0101
-    SET_BIT(GPIOA->AFR[0], 20);
-    CLEAR_BIT(GPIOA->AFR[0], 21);
-    SET_BIT(GPIOA->AFR[0], 22);
-    CLEAR_BIT(GPIOA->AFR[0], 23);
+    SET_BIT(GPIOA->AFR[0], 20);       // Set AFRL20
+    CLEAR_BIT(GPIOA->AFR[0], 21);     // Clear AFRL21
+    SET_BIT(GPIOA->AFR[0], 22);       // Set AFRL22
+    CLEAR_BIT(GPIOA->AFR[0], 23);     // Clear AFRL23
 
     // PA6: AFRL[27:24] = 0101
-    SET_BIT(GPIOA->AFR[0], 24);
-    CLEAR_BIT(GPIOA->AFR[0], 25);
-    SET_BIT(GPIOA->AFR[0], 26);
-    CLEAR_BIT(GPIOA->AFR[0], 27);
+    SET_BIT(GPIOA->AFR[0], 24);       // Set AFRL24
+    CLEAR_BIT(GPIOA->AFR[0], 25);     // Clear AFRL25
+    SET_BIT(GPIOA->AFR[0], 26);       // Set AFRL26
+    CLEAR_BIT(GPIOA->AFR[0], 27);     // Clear AFRL27
 
     // PA7: AFRL[31:28] = 0101
-    SET_BIT(GPIOA->AFR[0], 28);
-    CLEAR_BIT(GPIOA->AFR[0], 29);
-    SET_BIT(GPIOA->AFR[0], 30);
-    CLEAR_BIT(GPIOA->AFR[0], 31);
+    SET_BIT(GPIOA->AFR[0], 28);       // Set AFRL28
+    CLEAR_BIT(GPIOA->AFR[0], 29);     // Clear AFRL29
+    SET_BIT(GPIOA->AFR[0], 30);       // Set AFRL30
+    CLEAR_BIT(GPIOA->AFR[0], 31);     // Clear AFRL31
 }
 
 void spi1_config(void)
@@ -54,32 +54,32 @@ void spi1_config(void)
     SET_BIT(RCC->APB2ENR, 12);
 
     // Set clock to PCLK (BR[2:0] = 011 for PCLK/16)
-    SET_BIT(SPI1->CR1, 3);
-    CLEAR_BIT(SPI1->CR1, 4);
-    CLEAR_BIT(SPI1->CR1, 5);
+    SET_BIT(SPI1->CR1, 3);       // Set BR[0]
+    CLEAR_BIT(SPI1->CR1, 4);     // Clear BR[1]
+    CLEAR_BIT(SPI1->CR1, 5);     // Clear BR[2]
 
     // Set clock polarity (CPOL = 1) and phase (CPHA = 1)
-    SET_BIT(SPI1->CR1, 0);
-    SET_BIT(SPI1->CR1, 1);
+    SET_BIT(SPI1->CR1, 0);     // Set CPHA
+    SET_BIT(SPI1->CR1, 1);     // Set CPOL
 
     // Enable Full Duplex (BIDIMODE = 0)
-    CLEAR_BIT(SPI1->CR1, 10);
+    CLEAR_BIT(SPI1->CR1, 10);     // Clear BIDIMODE
 
     // Set MSB first (LSBFIRST = 0)
-    CLEAR_BIT(SPI1->CR1, 7);
+    CLEAR_BIT(SPI1->CR1, 7);     // Clear LSBFIRST
 
     // Set Mode to MASTER (MSTR = 1)
-    SET_BIT(SPI1->CR1, 2);
+    SET_BIT(SPI1->CR1, 2);     // Set MSTR
 
     // Set the data frame format to 8-bit (DFF = 0)
-    CLEAR_BIT(SPI1->CR1, 11);
+    CLEAR_BIT(SPI1->CR1, 11);     // Clear DFF
 
     // Slave Select Management (SSM = 1, SSI = 1)
-    SET_BIT(SPI1->CR1, 8);
-    SET_BIT(SPI1->CR1, 9);
+    SET_BIT(SPI1->CR1, 8);     // Set SSM
+    SET_BIT(SPI1->CR1, 9);     // Set SSI
 
     // Enable SPI (SPE = 1)
-    SET_BIT(SPI1->CR1, 6);
+    SET_BIT(SPI1->CR1, 6);     // Set SPE
 }
 
 void spi1_transmit(uint8_t* data, uint32_t size)

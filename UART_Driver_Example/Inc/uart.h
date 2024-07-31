@@ -14,7 +14,8 @@
  * 4. Configures PA3 (RX) for alternate function mode.
  * 5. Sets PA3 to UART2 alternate function.
  * 6. Enables clock access to UART2.
- * 7. Configures the baud rate for UART2 assuming an APB1 clock frequency of 45 MHz.
+ * 7. Configures the baud rate for UART2 assuming an APB1 clock frequency of 45
+ * MHz.
  * 8. Enables the UART2 transmitter and receiver.
  * 9. Enables the UART2 module.
  */
